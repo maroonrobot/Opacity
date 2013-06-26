@@ -15,12 +15,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
-public class IsItMms extends Activity {
+public class IsItMms extends LowlightActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_is_it_mms);
+		super.onCreate(savedInstanceState);
 		 Cursor cursor = getContentResolver().query(Uri.parse("content://mms-sms/conversations"), null, null, null, "DATE DESC");
 	       //Cursor cursor = getContentResolver().query(Uri.parse("content://sms"), null, null, null, "Date"); //shows all messages
 	       // Cursor cursor = getContentResolver().query(Uri.parse("content://sms/conversations"), null, null, null, "Date"); //causes an error bc no _id column
